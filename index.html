@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <title>page-1</title>
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    </head>
+    <body>
+        <div class="hero">
+            <nav>
+                <img src="images/cap.png" class="logo">
+                <ul>
+                    <li><a href="">HOME</a></li>
+                    <li><a href="">ABOUT</a></li>
+                    <li><a href="">RESUME</a></li>
+                    <li><a href="">HIRE ME</a></li>
+                </ul>
+                <img src="images/moon.png" id="icon">
+            </nav>
+            <div class="info">
+                <h1>I'm <span>Vivek</span> Venkatesh</h1>
+                <p>This is a page to ptractice my we development skills<br> for showcasing all my works in future.</p>
+                <a href="">Download CV</a>
+            </div>
+            <div class="img-box">
+                <img src="images/pattern.png" class="black-img">
+                <img src="images/jojo.png" class="main-img">
+            </div>
+            <div class="social-links">
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                <a href=""><i class="fa-brands fa-github"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+            </div>    
+        </div>
+
+        <script>
+            var icon= document.getElementById("icon");
+
+            if(localStorage.getItem("theme")==null){
+                localStorage.setItem("theme","light");
+            }
+            
+
+            let localdata = localStorage.getItem("theme");
+
+            if(localdata=="light"){
+                icon.src="images/moon.png";
+                document.body.classList.remove("dark-theme");
+            }
+            else if(localdata=="dark"){
+                icon.src="images/sun.png";
+                document.body.classList.add("dark-theme");
+            }
+
+            icon.onclick = function(){
+                document.body.classList.toggle("dark-theme");
+                if(document.body.classList.contains("dark-theme")){
+                    icon.src="images/sun.png";
+                    localStorage.setItem("theme","dark");
+                }
+                else{
+                    icon.src="images/moon.png";
+                    localStorage.setItem("theme","light");
+                }
+            }
+        </script>
+    </body>
+</html>
