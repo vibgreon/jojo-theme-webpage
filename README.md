@@ -1,4 +1,4 @@
-# jojo-theme-webpage
+# Basic Web-Dev
 
 This includes basic implementation of the following concept: <br>
 i) HTML <br>
